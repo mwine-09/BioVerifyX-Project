@@ -20,12 +20,18 @@
     </svg>
     <div class="d-flex justify-content-evenly align-items-center container">
       <h1 class="fw-semibold text-light">INVIGILATOR</h1>
+      <span
+        ><img
+          style="height: 50px"
+          src="{% static 'Assets/icons/avatar.svg' %}"
+          alt=""
+        />
 
-      <img
-        style="height: 50px"
-        src="{% static 'Assets/icons/avatar.svg' %}"
-        alt=""
-      />
+        <p>
+          <!-- name of the logged in user from request -->
+          {{ request.user.username }}
+        </p>
+      </span>
     </div>
   </div>
 </nav>

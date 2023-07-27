@@ -4,8 +4,8 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.showInvigilatorIndex, name="show-invigilator-index"),
-    path('login', views.showLogin, name="login"),
+    path('home/', views.showHome, name="home"),
+    path('', views.showLogin, name="invigilator-login"),
     path('logout', views.logout, name='logout'),
     path('update-user', views.updateUser, name='update-user'),
     path('settings/', views.showSettings, name='settings'),

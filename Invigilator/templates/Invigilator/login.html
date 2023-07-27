@@ -1,11 +1,91 @@
-{% extends './main.html' %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" /> -->
+    <link
+      rel="shortcut icon"
+      href="{% static 'Assets/icons/favicon.icon' %}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'styles/bootstrap-5.2.3-dist/css/bootstrap.min.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'styles/css/style.css' %}" />
+    <script src="https://use.fontawesome.com/32a503d4e8.js"></script>
+    <script src="{% static 'styles/bootstrap-5.2.3-dist/js/bootstrap.min.js' %}"></script>
+    <title>{% block title %} {% endblock %}</title>
 
-<div class="hero">
-  <div class="form-container">
-    <form method="post" action="{% url 'login' %}">
-      {% csrf_token %} {{ form.as_p }}
+    <style>
+      .img-container {
+        background-image: url("{% static 'Assets/icons/COCIS building.jpg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        width: 50vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid row">
+      <div class="col img-container"></div>
+      <div
+        class="col flex-column align-items-center text-center m-auto"
+        style="width: 50vw"
+      >
+        <img
+          style="height: 240px"
+          src="{% static 'Assets/icons/MUK BADGE ICON.png' %}"
+          alt=""
+        />
 
-      <button type="submit" class="btn btn-success">login</button>
-    </form>
-  </div>
-</div>
+        <p class="fs-1 fw-semibold" style="color: #0e8112">Login</p>
+        <p class="fs-4 fw-normal">Sign in to your account</p>
+        <form
+          action="{% url 'invigilator-login' %}"
+          method="post"
+          class="form-group m-auto"
+          style="width: 50%"
+        >
+          {% csrf_token %} {%if messages%}
+          <ul class="messages">
+            {%for message in messages%}
+            <li class="text-danger">{{message}}</li>
+            {%endfor%}
+          </ul>
+          {%endif%}
+
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              name="username"
+              placeholder="Enter your username"
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              placeholder="Enter your password"
+            />
+
+            <button
+              class="btn btn-success mt-4 container"
+              style="background-color: #0e8112"
+            >
+              Login
+            </button>
+          </div>
+        </form>
+        <span>Forgot password? <a href="">click here</a></span>
+      </div>
+    </div>
+  </body>
+</html>

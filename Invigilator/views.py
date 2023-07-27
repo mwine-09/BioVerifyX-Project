@@ -1,10 +1,9 @@
 from django.shortcuts import render
 from .forms import InvigilatorLoginForm
 from .models import Invigilator
-from django.contrib.auth import authenticate, login
-from .forms import InvigilatorLoginForm
+from django.contrib.auth import authenticate, login,logout
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+ 
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 # Create your views here.
@@ -12,38 +11,33 @@ from django.contrib.auth.decorators import login_required
 
 
 
-def showInvigilatorIndex(request):
-    return render(request,'Invigilator/index.html')
+def showHome(request):
+    template = 'Invigilator/home.html'
+    return render(request,template)
+
 
 
 def showLogin(request):
     if request.method == 'POST':
-        form = InvigilatorLoginForm(request.POST)
-        if form.is_valid():
-            username =form.cleaned_data['username']
-            password = form.cleaned_data['password']
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request,username = username,password = password)
+        if user is not None:
+            login(request,user)
+            messages.success(request, 'You have logged in successfully.')
+            return redirect('home')
+        else:
+            messages.error(request, 'Invalid username or password.')
+            return redirect('invigilator-login')
 
-            user = authenticate(username == username,password == password)
-            if user is not None:
-                login(request,user)
-
-                return redirect('Invigilator/home.html')
-
-            else:
-                # Handle invalid credentials
-                form.add_error(None, 'Invalid username or password.')
-   
     else:
-        form = InvigilatorLoginForm()
-    return render(request,'Invigilator/login.html', {'form': form})
+        template = 'Invigilator/login.html'
+        return render(request, template)
 
 
-
-
-def logout(request):
-    return "You have logged out successfully"
-
-
+def logout (request):
+    logout(request)
+    return redirect('invigilator-login')
 
 @login_required
 def updateUser(request):

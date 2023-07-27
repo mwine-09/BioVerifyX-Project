@@ -1,8 +1,31 @@
-{% extends './main.html' %} {% load static %} {% include './menuBar.html' %} {%
-include './navbar.html' %} {% block content %}
+{% extends './main.html' %} {% load static %} {% block title %} BioVerifyX -
+Your Fingerprint to Academic Integrity! {% endblock title %} {% block content %}
+<main class="container offcanvas-push">
+  <h1
+    class="mt-4 mb-4 p-2 text-center text-light"
+    style="background-color: #2f8ab1"
+  >
+    Student Records
+  </h1>
+  <a href="{% url 'invigilator-login' %}">
+    <button class="btn btn-success">LOGIN</button>
+  </a>
 
-<div class="container">
-  <h1>Welcome, thanks for logging in.</h1>
-</div>
+  {% include './components/studentTable.html' %}
+</main>
 
 {% endblock %}
+
+<style>
+  .offcanvas-push {
+    transform: translateX(0) !important;
+  }
+
+  div.offcanvas-push {
+    overflow: hidden;
+  }
+
+  .offcanvas-start.active {
+    transform: translateX(0) !important;
+  }
+</style>
