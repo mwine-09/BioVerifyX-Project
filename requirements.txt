@@ -1,0 +1,22 @@
+django == 4.2.3
+pillow
+
+
+
+
+
+
+
+# admin user
+username: mark
+email : mark@gmail.com
+password : mark100
+
+
+#invigilator
+username :Ritah
+password: zovzeG-johzos-karwo6
+
+
+
+

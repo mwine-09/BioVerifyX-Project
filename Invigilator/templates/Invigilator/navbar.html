@@ -1,0 +1,31 @@
+{% load static %}
+<nav
+  class="container-fluid navbar"
+  style="position: sticky; top: 0; background-color: #0e8112; height: 100px"
+>
+  <div class="container-fluid m-auto p-3">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="40"
+      viewBox="0 -960 960 960"
+      width="40"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasWithBothOptions"
+      aria-controls="offcanvasWithBothOptions"
+    >
+      <path
+        d="M120-240v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"
+        fill="#ffff"
+      />
+    </svg>
+    <div class="d-flex justify-content-evenly align-items-center container">
+      <h1 class="fw-semibold text-light">INVIGILATOR</h1>
+
+      <img
+        style="height: 50px"
+        src="{% static 'Assets/icons/avatar.svg' %}"
+        alt=""
+      />
+    </div>
+  </div>
+</nav>

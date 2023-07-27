@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" /> -->
+    <link
+      rel="shortcut icon"
+      href="{% static 'Assets/icons/favicon.icon' %}"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="{% static 'styles/bootstrap-5.2.3-dist/css/bootstrap.min.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'styles/css/style.css' %}" />
+    <script src="https://use.fontawesome.com/32a503d4e8.js"></script>
+    <script src="{% static 'styles/bootstrap-5.2.3-dist/js/bootstrap.min.js' %}"></script>
+    <title>{% block title %} {% endblock %}</title>
+  </head>
+
+  <body>
+    {% include './navbar.html' %}
+    {% include './menuBar.html' %}
+
+     {% if messages %}
+
+    <ul class="messages">
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %} {% block content %} {% endblock %}
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

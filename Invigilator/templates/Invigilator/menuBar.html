@@ -1,0 +1,208 @@
+{% load static %}
+<div
+  class="offcanvas offcanvas-start"
+  data-bs-scroll="true"
+  tabindex="-1"
+  id="offcanvasWithBothOptions"
+  aria-labelledby="offcanvasWithBothOptionsLabel"
+>
+  <div class="offcanvas-header bg-transparent">
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <div
+      class="menuContainer container vh-100 align-items-center justify-content-center"
+    >
+      <div class="flex-column align-items-center text-center m-2">
+        <img
+          src="{% static 'Assets/icons/MUK BADGE ICON.png' %}"
+          class="img-fluid text-center"
+          style="height: 100px"
+        />
+        <h1 class="fs-3 text-light mt-3 fw-bold">DASHBOARD</h1>
+      </div>
+
+      <ul class="list-group m-lg-0 list-group-flush active">
+        <li class="list-group-item mt-2 bg-transparent d-flex text-light">
+          <a href="{% url 'show-invigilator-index' %}" class="nav-link ml-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="32"
+              viewBox="0 -960 960 960"
+              width="32"
+            >
+              <path
+                d="M220-180h150v-250h220v250h150v-390L480-765 220-570v390Zm-60 60v-480l320-240 320 240v480H530v-250H430v250H160Zm320-353Z"
+                fill="#ffff"
+              />
+            </svg>
+            <span class="m-md-3 fs-5"> Home </span>
+          </a>
+        </li>
+
+        <li
+          class="list-group-item mt-2 bg-transparent d-flex align-items-center text-light justify-content-lg-start"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="38"
+            viewBox="0 -960 960 960"
+            width="38"
+          >
+            <path
+              d="M123-584q-4-2-4-6.5t2-8.5q62-86 157-133t203-47q108 0 203.5 46T843-601q3 5 2.5 8t-3.5 6q-3 3-7.5 3t-8.5-5q-59-82-150.5-126T481-759q-103 0-193 44.5T138-589q-4 5-7.5 6t-7.5-1ZM600-81q-103-26-169.5-103T364-371q0-47 34.5-79t82.5-32q48 0 82.5 32t34.5 79q0 38 29.5 64t68.5 26q38 0 66.5-26t28.5-64q0-123-91.5-206T481-660q-127 0-218.5 83T171-371q0 24 5.5 62.5T200-221q2 5 0 7.5t-5 4.5q-4 2-8.5 1t-6.5-6q-13-38-20.5-77.5T152-371q0-129 98-220.5T481-683q136 0 233.5 90T812-371q0 46-34 78t-82 32q-49 0-84-32t-35-78q0-39-28.5-65T481-462q-39 0-68 26t-29 65q0 104 63 173.5T604-100q6 2 7.5 5t.5 7q-1 5-4 7t-8 0ZM247-801q-5 2-7.5.5T235-805q-2-2-2-6t3-6q57-31 119.5-47T481-880q65 0 127.5 16T728-819q5 2 5.5 6t-1.5 7q-2 3-5.5 5t-8.5 0q-55-27-115-42.5T481-859q-62 0-121 14.5T247-801ZM381-92q-58-60-90.5-126T258-371q0-89 65.5-150T481-582q92 0 158.5 61T706-371q0 5-2.5 7.5T696-361q-5 0-8-2.5t-3-7.5q0-81-60.5-136T481-562q-83 0-142.5 55T279-371q0 85 29.5 145T396-106q4 4 3.5 7.5T396-92q-2 2-6.5 3.5T381-92Zm306-73q-88 0-152.5-58.5T470-371q0-5 2.5-8t7.5-3q5 0 7.5 3t2.5 8q0 81 59.5 133.5T687-185q8 0 19-1t24-3q5-1 8 1.5t4 5.5q1 4-.5 7t-6.5 4q-18 5-31.5 5.5t-16.5.5Z"
+              fill="#ffff"
+            />
+          </svg>
+          <span class="m-md-3 fs-5"> Authenticate Student </span>
+        </li>
+        <li
+          class="list-group-item mt-2 bg-transparent d-flex align-items-center text-light justify-content-lg-start"
+        >
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+          >
+            <title>user</title>
+            <path
+              d="M16 16c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8c0 4.411-3.589 8-8 8zM16 2c-3.309 0-6 2.691-6 6s2.691 6 6 6 6-2.691 6-6c0-3.309-2.691-6-6-6z"
+              fill="#ffff"
+            ></path>
+            <path
+              d="M29 32h-26c-0.553 0-1-0.447-1-1v-6.884c0-1.033 0.528-2.004 1.378-2.535 7.51-4.685 17.741-4.684 25.243-0.001 0.851 0.532 1.379 1.503 1.379 2.536v6.884c0 0.553-0.447 1-1 1zM4 30h24v-5.884c0-0.349-0.168-0.671-0.439-0.84-6.866-4.286-16.252-4.289-23.124 0.001-0.27 0.168-0.438 0.49-0.438 0.839l-0 5.884z"
+              fill="#ffff"
+            ></path>
+          </svg>
+          <span class="m-md-3 fs-5"> Students </span>
+        </li>
+        <li
+          class="list-group-item mt-2 bg-transparent d-flex align-items-center text-light justify-content-lg-start"
+        >
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+          >
+            <title>user</title>
+            <path
+              d="M16 16c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8c0 4.411-3.589 8-8 8zM16 2c-3.309 0-6 2.691-6 6s2.691 6 6 6 6-2.691 6-6c0-3.309-2.691-6-6-6z"
+              fill="#ffff"
+            ></path>
+            <path
+              d="M29 32h-26c-0.553 0-1-0.447-1-1v-6.884c0-1.033 0.528-2.004 1.378-2.535 7.51-4.685 17.741-4.684 25.243-0.001 0.851 0.532 1.379 1.503 1.379 2.536v6.884c0 0.553-0.447 1-1 1zM4 30h24v-5.884c0-0.349-0.168-0.671-0.439-0.84-6.866-4.286-16.252-4.289-23.124 0.001-0.27 0.168-0.438 0.49-0.438 0.839l-0 5.884z"
+              fill="#ffff"
+            ></path>
+          </svg>
+
+          <span class="m-md-3 fs-5"> Authenticate Logs </span>
+        </li>
+
+        <li
+          class="list-group-item mt-2 bg-transparent d-flex align-items-center text-light justify-content-lg-start"
+        >
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+          >
+            <title>user</title>
+            <path
+              d="M16 16c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8c0 4.411-3.589 8-8 8zM16 2c-3.309 0-6 2.691-6 6s2.691 6 6 6 6-2.691 6-6c0-3.309-2.691-6-6-6z"
+              fill="#ffff"
+            ></path>
+            <path
+              d="M29 32h-26c-0.553 0-1-0.447-1-1v-6.884c0-1.033 0.528-2.004 1.378-2.535 7.51-4.685 17.741-4.684 25.243-0.001 0.851 0.532 1.379 1.503 1.379 2.536v6.884c0 0.553-0.447 1-1 1zM4 30h24v-5.884c0-0.349-0.168-0.671-0.439-0.84-6.866-4.286-16.252-4.289-23.124 0.001-0.27 0.168-0.438 0.49-0.438 0.839l-0 5.884z"
+              fill="#ffff"
+            ></path>
+          </svg>
+
+          <span class="m-md-3 fs-5"> Invigilators </span>
+        </li>
+        <li
+          class="list-group-item mt-2 bg-transparent d-flex align-items-center text-light justify-content-lg-start"
+        >
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 32 32"
+          >
+            <title>user</title>
+            <path
+              d="M16 16c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8c0 4.411-3.589 8-8 8zM16 2c-3.309 0-6 2.691-6 6s2.691 6 6 6 6-2.691 6-6c0-3.309-2.691-6-6-6z"
+              fill="#ffff"
+            ></path>
+            <path
+              d="M29 32h-26c-0.553 0-1-0.447-1-1v-6.884c0-1.033 0.528-2.004 1.378-2.535 7.51-4.685 17.741-4.684 25.243-0.001 0.851 0.532 1.379 1.503 1.379 2.536v6.884c0 0.553-0.447 1-1 1zM4 30h24v-5.884c0-0.349-0.168-0.671-0.439-0.84-6.866-4.286-16.252-4.289-23.124 0.001-0.27 0.168-0.438 0.49-0.438 0.839l-0 5.884z"
+              fill="#ffff"
+            ></path>
+          </svg>
+
+          <span class="m-md-3 fs-5"> Administrators </span>
+        </li>
+
+        <li
+          class="list-group-item mt-3 bg-transparent d-flex align-items-center text-light justify-content-lg-start"
+        >
+          <a href="{% url 'settings' %}" class="nav-link text-decoration-none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="32"
+              viewBox="0 -960 960 960"
+              width="32"
+            >
+              <path
+                d="m388-80-20-126q-19-7-40-19t-37-25l-118 54-93-164 108-79q-2-9-2.5-20.5T185-480q0-9 .5-20.5T188-521L80-600l93-164 118 54q16-13 37-25t40-18l20-127h184l20 126q19 7 40.5 18.5T669-710l118-54 93 164-108 77q2 10 2.5 21.5t.5 21.5q0 10-.5 21t-2.5 21l108 78-93 164-118-54q-16 13-36.5 25.5T592-206L572-80H388Zm92-270q54 0 92-38t38-92q0-54-38-92t-92-38q-54 0-92 38t-38 92q0 54 38 92t92 38Zm0-60q-29 0-49.5-20.5T410-480q0-29 20.5-49.5T480-550q29 0 49.5 20.5T550-480q0 29-20.5 49.5T480-410Zm0-70Zm-44 340h88l14-112q33-8 62.5-25t53.5-41l106 46 40-72-94-69q4-17 6.5-33.5T715-480q0-17-2-33.5t-7-33.5l94-69-40-72-106 46q-23-26-52-43.5T538-708l-14-112h-88l-14 112q-34 7-63.5 24T306-642l-106-46-40 72 94 69q-4 17-6.5 33.5T245-480q0 17 2.5 33.5T254-413l-94 69 40 72 106-46q24 24 53.5 41t62.5 25l14 112Z"
+                fill="#ffff"
+              />
+            </svg>
+
+            <span class="m-md-3 fs-5"> Settings </span>
+          </a>
+        </li>
+        <li
+          class="list-group-item mt-2 bg-transparent d-flex align-items-center text-light justify-content-lg-start"
+        >
+          <a href="" class="nav-link text-decoration-none">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="32"
+              viewBox="0 -960 960 960"
+              width="32"
+            >
+              <path
+                d="m666-305-43-43 102-102H375v-60h348L621-612l43-43 176 176-174 174ZM120-120v-720h351v60H180v600h291v60H120Z"
+                fill="#ffff"
+              />
+            </svg>
+            <span class="m-md-3 fs-5"> Logout </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<style>
+  .offcanvas-body {
+    /* background-color: #0e8112; */
+    background-color: #198754;
+  }
+
+  .list-group-item {
+    font-size: 1.5rem;
+  }
+</style>

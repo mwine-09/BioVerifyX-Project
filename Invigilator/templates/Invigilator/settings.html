@@ -1,0 +1,32 @@
+{% extends './main.html' %} {% block content %}
+
+<div class="container mt-5">
+  <h1 class="mt-3 p-3 text-center text-light" style="background-color: #2f8ab1">
+    Invigilator Password Reset
+  </h1>
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="new_password" class="form-label">New Password:</label>
+      <input
+        type="password"
+        name="new_password"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="mb-3">
+      <label for="confirm_password" class="form-label">Confirm Password:</label>
+      <input
+        type="password"
+        name="confirm_password"
+        class="form-control"
+        required
+      />
+    </div>
+    <button type="submit" class="btn btn-success">Reset Password</button>
+  </form>
+</div>
+
+{% endblock %}
