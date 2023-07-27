@@ -1,26 +1,22 @@
 from django.db import models
-from Admin.models import User
-
-
-
+from django.contrib import admin
+from django.contrib.auth.models import AbstractUser
 from Biometrics.models import Student
+from Admin.models import AdminUser
 
-
-
-
-# Create your models here.
  
+
 class Invigilator(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    assigned_exams = models.ManyToManyField('Exam', through='ExamInvigilator')
+    id = models.AutoField(primary_key=True)
+    first_name = models.CharField(max_length=100,null=True, blank=True)
+    last_name = models.CharField(max_length=100,null=True, blank=True)
+    added_by = models.ForeignKey(AdminUser, on_delete=models.SET_NULL, null=True, blank=True, related_name='added_invigilators')
+    # Use 'related_name' to specify a custom reverse accessor name for the ForeignKey
 
-
-    username = models.CharField(max_length=100)
-    password = models.CharField(max_length=100)
+    # Add any other fields specific to the Invigilator model here
 
     def __str__(self):
-        return self.user.username
-
+        return f"{self.first_name} {self.last_name}"
 
 
 
@@ -57,3 +53,10 @@ class ExamAssignment(models.Model):
 
     def __str__(self):
         return f"{self.invigilator.user.username} - {self.exam.name} - Room {self.exam_room.room_number}"
+
+
+
+admin.site.register(Invigilator)
+admin.site.register(Exam)
+admin.site.register(ExamInvigilator)
+admin.site.register(ExamRoom)

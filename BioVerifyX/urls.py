@@ -26,7 +26,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('admin/', include('Admin.urls')),
-    path('Invigilator/', include('Invigilator.urls')),
+    path('', include('Invigilator.urls')),
     path('Invigilator/', include('django.contrib.auth.urls')),
     path('Biometrics/', include('Biometrics.urls')),
 ]

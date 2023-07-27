@@ -24,8 +24,6 @@
   <body>
     {% include './navbar.html' %} {% include './menuBar.html' %}
 
-    <!-- messages. a pop up using bootstrap -->
-    {% if messages %}
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -40,12 +38,8 @@
         </div>
       </div>
     </div>
-    {% endif %}
-    <!-- end of messages
-          
-    
-    {% block
-    content %} {% endblock %}
+
+    {% block content %} {% endblock %}
     <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>

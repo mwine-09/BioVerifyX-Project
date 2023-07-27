@@ -7,14 +7,11 @@ Your Fingerprint to Academic Integrity! {% endblock title %} {% block content %}
   >
     Student Records
   </h1>
-  <a href="{% url 'invigilator-login' %}">
-    <button class="btn btn-success">LOGIN</button>
-  </a>
 
   {% include './components/studentTable.html' %}
 </main>
 
-{% endblock %}
+{% endblock content %}
 
 <style>
   .offcanvas-push {

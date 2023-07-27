@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/Users/mwine/Desktop/BioVerifyX Project/bioverifyXvenv/bin/python" "$0" "$@"
+'''exec' "/Users/mwine/Desktop/BioVerifyX Project/bioverifyXvenv/bin/python3" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re
